@@ -58,12 +58,47 @@
             animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
+        @keyframes slideRight {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        .animate-slide-right {
+            animation: slideRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 380px) {
+            .xs\:hidden { display: none; }
+        }
+        @media (min-width: 381px) {
+            .xs\:flex { display: flex; }
+            .xs\:hidden { display: none; }
+        }
+
         /* Hide Scrollbars */
         ::-webkit-scrollbar {
             display: none;
         }
     </style>
 <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="gradient-bg min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
 {
   "imports": {
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
